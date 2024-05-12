@@ -8,7 +8,7 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-[#E1F0DA] text-center font-poppins">
+<body class="text-center font-Poppins">
   @layouts.header()
 
   @end
@@ -17,12 +17,13 @@
     {{{ await $slots.body() }}}
   </body>
 
-  @layouts.layouts.footer()
+  @layouts.footer()
 
   @end()
 
   @end
 
+  <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
 </body>
 
 </html>
