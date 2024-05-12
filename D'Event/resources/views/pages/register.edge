@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+
+<body>
+
+  <div class="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
+    <div class="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-2xl flex justify-center flex-1">
+      <div class="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
+        <div>
+          <img src="{{asset('/resources/images/logo3.png')}}" class="w-32 ml-12" />
+        </div>
+        <div class="mt-6 flex flex-col">
+          <div class="ml-12">
+            <h1 class="text-3xl font-semibold mb-6">
+              Sign up
+            </h1>
+
+            <p>
+              If you don’t have an account register
+            </p>
+            <p>
+              You can <a href="{{route('/login')}}"><span class="font-bold">Login here !</span></a>
+            </p>
+          </div>
+
+          <div class="w-full flex-1 mt-8">
+            <div class="mx-auto max-w-xs">
+              <input
+                class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                type="email" placeholder="Enter your Email" required />
+
+              <input
+                class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                type="name" placeholder="Create Username" required />
+
+              <input
+                class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                type="password" placeholder="Password" required />
+
+              <input
+                class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                type="password" placeholder="Confirm Password" required />
+
+              <button type="submit"
+                class="mt-5 tracking-wide font-semibold bg-blue-950 text-gray-100 w-full py-4 rounded-lg hover:bg-blue-900 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+
+                <svg class="w-6 h-6 -ml-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                  <circle cx="8.5" cy="7" r="4" />
+                  <path d="M20 8v6M23 11h-6" />
+                </svg>
+
+                <span class="ml-3">
+                  Sign Up
+                </span>
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-1 bg-blue-950 border rounded-2xl my-8 mx-20">
+        <div class="flex justify-center items-center">
+          <img src="{{asset('/resources/images/register.png')}}" class="w-96">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
