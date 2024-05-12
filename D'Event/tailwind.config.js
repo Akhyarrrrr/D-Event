@@ -1,9 +1,13 @@
 export default {
-  content: ['./resources/**/*.edge', './resources/**/*.{js,ts,jsx,tsx,vue}'],
+  content: [
+    './resources/**/*.edge',
+    './resources/**/*.{js,ts,jsx,tsx,vue}',
+    './node_modules/flowbite/**/*.js',
+  ],
   theme: {
     extend: {
       fontFamily: {
-        primary: ['Poppins'],
+        Poppins: ['Poppins'],
       },
     },
   },
