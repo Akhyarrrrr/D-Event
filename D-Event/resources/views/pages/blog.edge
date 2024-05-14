@@ -1,0 +1,29 @@
+@layouts.main()
+@slot('title')
+Blog Page
+@endslot
+
+@slot('body')
+<div>
+
+  <div class="relative overflow-hidden">
+    <img src="{{ asset('/resources/images/history.png') }}" alt="history" class="w-full h-96 object-cover">
+
+    <p
+      class="cursor-pointer absolute inset-0 flex mt-36 justify-center text-5xl text-center text-white font-medium px-52">
+      History
+    </p>
+    <p
+      class="cursor-pointer absolute inset-0 flex justify-center text-center text-white font-medium px-52 mt-52 text-lg">
+      Hidupkan kembali momen-momen berharga dari acara-acara sebelumnya di blog kami
+    </p>
+
+  </div>
+
+
+
+</div>
+
+@endslot
+
+@end

@@ -1,0 +1,88 @@
+@layouts.main()
+@slot('title')
+Bantuan Page
+@endslot
+
+@slot('body')
+<div>
+
+  <div class="relative overflow-hidden">
+    <img src="https://source.unsplash.com/400x300/?hanging-planters" alt="Hanging Planters" class="w-full h-96">
+    <p
+      class="cursor-pointer absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-3xl text-center text-white font-medium group-hover:bg-opacity-60 transition px-52">
+      Tingkatkan jangkauan dan eksposur acaramu! Isilah formulir ini sekarang untuk menyertakan agenda acaramu di
+      website kami.
+    </p>
+  </div>
+
+  <div class="my-16">
+
+    <p class="text-5xl font-medium mt-16 mb-8">
+      Ayo Hadirkan Acaramu !
+    </p>
+
+    <p class="text-lg">
+      Biarkan kami bantu membawa proyekmu ke level berikutnya tanpa perlu banyak bicara
+    </p>
+
+  </div>
+
+  <div class="mx-40 mb-16">
+    <form>
+      <div class="mb-5 text-start">
+        <label for="name" class="mb-3 block text-base font-medium text-blue-950">
+          Nama Acara
+        </label>
+        <input type="text" name="name" id="name" placeholder="Nama Acara" required
+          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-blue-950 focus:shadow-md shadow-lg" />
+      </div>
+
+      <div class="mb-5 text-start">
+        <label for="email" class="mb-3 block text-base font-medium text-blue-950">
+          Email Organisasi
+        </label>
+        <input type="email" name="email" id="email" placeholder="Email Organisasi" required
+          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-blue-950 focus:shadow-md shadow-lg" />
+      </div>
+
+      <div class="mb-5 text-start">
+        <label for="name" class="mb-3 block text-base font-medium text-blue-950">
+          Link Pendaftaran
+        </label>
+        <input type="text" name="name" id="name" placeholder="Link Pendaftaran" required
+          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-blue-950 focus:shadow-md shadow-lg" />
+      </div>
+
+      <div class="mb-5 text-start">
+        <label for="date" class="mb-3 block text-base font-medium text-blue-950">
+          Jadwal Kegiatan
+        </label>
+        <input type="date" name="date" id="date" required
+          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-blue-950 focus:shadow-md shadow-lg" />
+      </div>
+
+      <div class="mb-5 text-start">
+        <label for="message" class="mb-3 block text-base font-medium text-blue-950">
+          Deskripsi Acara
+        </label>
+        <textarea type="textarea" name="message" id="message" placeholder="Deskripsi Acara" required
+          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-blue-950 focus:shadow-md shadow-lg"
+          rows="7"></textarea></>
+      </div>
+
+      <p class="text-start text-sm">*Kami akan segera menghubungi Anda untuk membahas detail acara yang akan dipaparkan.</p>
+
+      <div class="mt-10">
+        <button type="submit"
+          class="hover:shadow-form rounded-full bg-blue-950 py-3 px-16 text-center text-base font-semibold text-white outline-none">
+          Kirim
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+@endslot
+
+@end
