@@ -1,16 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
+@layouts.main()
 
-  <p>
-    p balap
-    
-  </p>
-</body>
-</html>
+@slot('title')
+Admin Dashboard
+@endslot
+
+@slot('body')
+<div class="mb-6">
+  <h1 class="text-3xl font-semibold mb-4 mt-16">
+    Admin Dashboard
+  </h1>
+
+  <p class="text-xl">Selamat datang di dashboard admin. Berikut adalah data pengguna yang terdaftar:</p>
+</div>
+
+<div class="overflow-x-auto shadow-md sm:rounded-lg mx-16 mb-32">
+  <table class="w-full text-sm text-left rtl:text-right text-black bg-[#E1F0DA]">
+    <thead class="text-md uppercase bg-[#14532d] text-white">
+      <tr>
+        <th scope="col" class="px-6 py-3 w-1/4 text-center">
+          ID
+        </th>
+        <th scope="col" class="px-6 py-3 w-1/4 text-center">
+          Nama
+        </th>
+        <th scope="col" class="px-6 py-3 w-1/4 text-center">
+          Email
+        </th>
+        <th scope="col" class="px-6 py-3 w-1/4 text-center">
+          Action
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      @each(user in users)
+      <tr class="bg-white border-b hover:bg-gray-50">
+        <td class="px-6 py-4 font-medium text-black whitespace-nowrap text-center">
+          {{ user.id }}
+        </td>
+        <td class="px-6 py-4 text-center">
+          {{ user.fullName || '-' }}
+        </td>
+        <td class="px-6 py-4 text-center">
+          {{ user.email }}
+        </td>
+       <td>
+        <form class="mt-5" method="POST"
+            action="{{ route('user.destroy', {id: user.id}, { qs: { _method: 'DELETE' } }) }}">
+            {{csrfField()}}
+            <button class="bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" viewBox="0 0 20 20"
+                fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M6 3a1 1 0 011-1h6a1 1 0 011 1v1h2a1 1 0 011 1v2a1 1 0 01-1 1h-1v8a1 1 0 01-1 1H8a1 1 0 01-1-1V8H6a1 1 0 01-1-1V4a1 1 0 011-1zm4 2H8v10h2V5zm3 0h-2v10h2V5z"
+                  clip-rule="evenodd" />
+              </svg>
+              Delete
+            </button>
+          </form>
+       </td>
+      </tr>
+      @endeach
+    </tbody>
+  </table>
+</div>
+@endslot
+@end
