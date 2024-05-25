@@ -1,33 +1,54 @@
 <header>
   <nav class="bg-blue-950 border-blue-200 px-6 py-4">
     <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-      <a href="https://flowbite.com" class="flex items-center">
-        <img src="{{asset('/resources/images/logo.png')}}" class="h-8" alt="D'Event Logo" />
+      <a href="{{ route('/') }}" class="flex items-center">
+        <img src="{{ asset('/resources/images/logo.png') }}" class="h-8" alt="D'Event Logo" />
       </a>
+
+      @if (auth.user)
+      <div class="flex items-center order-2 space-x-4 text-white">
+        Halo <span class="font-bold ml-2">{{ auth.user.fullName }}</span>
+
+        {{-- Logout --}}
+        <form method="POST" action="{{ route('auth.logout') }}">
+          {{ csrfField() }}
+          <button type="submit"
+            class="bg-white text-blue-950 border hover:bg-blue-950 hover:text-white hover:border-white px-4 py-2 rounded-full font-semibold text-md ml-4">
+            Logout
+          </button>
+        </form>
+      </div>
+      @else
       <div class="flex items-center order-2 space-x-4">
-        <a href="{{route('/login')}}"
-          class="text-white rounded-full hover:border-blue-950 px-4 py-2 border hover:hover:bg-blue-900 text-md font-semibold">Log
+        {{-- Log In --}}
+        <a href="{{ route('auth.login.show') }}"
+          class="text-white rounded-full hover:border-white px-4 py-2 border hover:text-blue-950 hover:bg-white text-md font-semibold">Log
           In</a>
-        <a href="{{route('/register')}}"
-          class=" bg-blue-800 border border-none hover:bg-blue-900 hover:border-white px-4 py-2 rounded-full text-white font-semibold text-md">Sign
+
+        {{-- Sign Up --}}
+        <a href="{{ route('auth.register.show') }}"
+          class="bg-white text-blue-950 border hover:bg-blue-950 hover:text-white hover:border-white px-4 py-2 rounded-full font-semibold text-md">Sign
           Up</a>
       </div>
+      @endif
+
+      {{-- Mobile Menu --}}
       <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
         <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 text-lg">
           <li>
-            <a href="{{route('/beranda')}}"
+            <a href="{{ route('/') }}"
               class="block py-2 pr-4 pl-3 border-b lg:border-0 lg:hover:text-primary-700 lg:p-0 text-gray-400 lg:hover:text-white hover:bg-gray-700 hover:text-white lg:hover:bg-transparent border-gray-700">Beranda</a>
           </li>
           <li>
-            <a href="{{route('/acara')}}"
+            <a href="{{ route('/acara') }}"
               class="block py-2 pr-4 pl-3 border-b lg:border-0 lg:hover:text-primary-700 lg:p-0 text-gray-400 lg:hover:text-white hover:bg-gray-700 hover:text-white lg:hover:bg-transparent border-gray-700">Acara</a>
           </li>
           <li>
-            <a href="{{route('/blog')}}"
+            <a href="{{ route('/blog') }}"
               class="block py-2 pr-4 pl-3 border-b lg:border-0 lg:hover:text-primary-700 lg:p-0 text-gray-400 lg:hover:text-white hover:bg-gray-700 hover:text-white lg:hover:bg-transparent border-gray-700">Blog</a>
           </li>
           <li>
-            <a href="{{route('/bantuan')}}"
+            <a href="{{ route('/bantuan') }}"
               class="block py-2 pr-4 pl-3 border-b lg:border-0 lg:hover:text-primary-700 lg:p-0 text-gray-400 lg:hover:text-white hover:bg-gray-700 hover:text-white lg:hover:bg-transparent border-gray-700">Bantuan</a>
           </li>
         </ul>
