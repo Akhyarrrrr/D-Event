@@ -4,19 +4,435 @@ Acara Page
 @endslot
 
 @slot('body')
-<div>
+<div class="bg-gray-100 mb-10">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Acara</h1>
-                <p>Ini adalah halaman acara</p>
-            </div>
+  <div class="relative overflow-hidden">
+    <img src="{{ asset('/resources/images/history.png') }}" alt="history" class="w-full h-60 object-cover">
+
+    <form class="absolute top-1/2 transform -translate-y-1/2 w-full">
+      <label for="default-search"
+        class="p-20 mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+      <div class="relative mx-auto max-w-[90%] rounded-full w-full">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <svg class="w-8 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 20 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+          </svg>
         </div>
-    </div>  
+        <input type="search" id="default-search"
+          class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Cari Acara Disini ..." required />
+        <button type="submit"
+          class="text-white mx-2 absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+      </div>
+    </form>
+
+  </div>
+
+  <section id="scroll-section"
+    class=" mt-6 flex gap-5 px-5 font-medium text-white leading-[140%] max-md:flex-wrap overflow-hidden ">
+    <!-- Article Template -->
+
+    <article class="flex-shrink-0 flex flex-col justify-center w-[300px] max-md:w-full overflow-hidden">
+      <div
+        class="flex overflow-hidden relative flex-col pt-20 pb-px w-full h-[420px] max-md:w-full items-start rounded-sm">
+        <img loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1b57099ab6e91066b0c1b4285c32de868d90d69f110697bff850c184049259a?apiKey=e18d0a0d50014be2861bdf8974ce47f5&"
+          alt="Manifest Image 1" class="object-cover absolute inset-0 w-full h-full rounded-[20px]" />
+        <div class="flex relative flex-col items-start py-11 pr-20 pl-9 mt-20 max-md:px-5 max-md:mt-10 max-md:w-full">
+          <h2 class="text-2xl text-black font-semibold">MANIFEST</h2>
+          <p class="mt-3.5 text-sm text-opacity-70  text-black">Deskripsi manifest bla bla</p>
+          <time class="mt-5  text-black text-base">59 : 14 : 36 : 24</time>
+          <div class="flex gap-5 justify-between mt-2.5 text-xs   text-black whitespace-nowrap">
+            <span>Days</span>
+            <span>Hours</span>
+            <span>Minutes</span>
+            <span>Seconds</span>
+          </div>
+          <div class="flex gap-1.5 mt-3.5">
+            <button type="button" tabindex="0" aria-label="Click to see more"
+              class="flex justify-center px-12 py-3.5 text-base leading-7 whitespace-nowrap bg-white rounded-[30px] text-slate-900">
+              selengkapnya
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <article class="flex-shrink-0 flex flex-col justify-center w-[300px] max-md:w-full overflow-hidden">
+      <div
+        class="flex overflow-hidden relative flex-col pt-20 pb-px w-full h-[420px] max-md:w-full items-start rounded-sm">
+        <img loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1b57099ab6e91066b0c1b4285c32de868d90d69f110697bff850c184049259a?apiKey=e18d0a0d50014be2861bdf8974ce47f5&"
+          alt="Manifest Image 1" class="object-cover absolute inset-0 w-full h-full rounded-[20px]" />
+        <div class="flex relative flex-col items-start py-11 pr-20 pl-9 mt-20 max-md:px-5 max-md:mt-10 max-md:w-full">
+          <h2 class="text-2xl text-black font-semibold">MANIFEST</h2>
+          <p class="mt-3.5 text-sm text-opacity-70  text-black">Deskripsi manifest bla bla</p>
+          <time class="mt-5  text-black text-base">59 : 14 : 36 : 24</time>
+          <div class="flex gap-5 justify-between mt-2.5 text-xs   text-black whitespace-nowrap">
+            <span>Days</span>
+            <span>Hours</span>
+            <span>Minutes</span>
+            <span>Seconds</span>
+          </div>
+          <div class="flex gap-1.5 mt-3.5">
+            <button type="button" tabindex="0" aria-label="Click to see more"
+              class="flex justify-center px-12 py-3.5 text-base leading-7 whitespace-nowrap bg-white rounded-[30px] text-slate-900">
+              selengkapnya
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <article class="flex-shrink-0 flex flex-col justify-center w-[300px] max-md:w-full overflow-hidden">
+      <div
+        class="flex overflow-hidden relative flex-col pt-20 pb-px w-full h-[420px] max-md:w-full items-start rounded-sm">
+        <img loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1b57099ab6e91066b0c1b4285c32de868d90d69f110697bff850c184049259a?apiKey=e18d0a0d50014be2861bdf8974ce47f5&"
+          alt="Manifest Image 1" class="object-cover absolute inset-0 w-full h-full rounded-[20px]" />
+        <div class="flex relative flex-col items-start py-11 pr-20 pl-9 mt-20 max-md:px-5 max-md:mt-10 max-md:w-full">
+          <h2 class="text-2xl text-black font-semibold">MANIFEST</h2>
+          <p class="mt-3.5 text-sm text-opacity-70  text-black">Deskripsi manifest bla bla</p>
+          <time class="mt-5  text-black text-base">59 : 14 : 36 : 24</time>
+          <div class="flex gap-5 justify-between mt-2.5 text-xs   text-black whitespace-nowrap">
+            <span>Days</span>
+            <span>Hours</span>
+            <span>Minutes</span>
+            <span>Seconds</span>
+          </div>
+          <div class="flex gap-1.5 mt-3.5">
+            <button type="button" tabindex="0" aria-label="Click to see more"
+              class="flex justify-center px-12 py-3.5 text-base leading-7 whitespace-nowrap bg-white rounded-[30px] text-slate-900">
+              selengkapnya
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <article class="flex-shrink-0 flex flex-col justify-center w-[300px] max-md:w-full overflow-hidden">
+      <div
+        class="flex overflow-hidden relative flex-col pt-20 pb-px w-full h-[420px] max-md:w-full items-start rounded-sm">
+        <img loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1b57099ab6e91066b0c1b4285c32de868d90d69f110697bff850c184049259a?apiKey=e18d0a0d50014be2861bdf8974ce47f5&"
+          alt="Manifest Image 1" class="object-cover absolute inset-0 w-full h-full rounded-[20px]" />
+        <div class="flex relative flex-col items-start py-11 pr-20 pl-9 mt-20 max-md:px-5 max-md:mt-10 max-md:w-full">
+          <h2 class="text-2xl text-black font-semibold">MANIFEST</h2>
+          <p class="mt-3.5 text-sm text-opacity-70  text-black">Deskripsi manifest bla bla</p>
+          <time class="mt-5  text-black text-base">59 : 14 : 36 : 24</time>
+          <div class="flex gap-5 justify-between mt-2.5 text-xs   text-black whitespace-nowrap">
+            <span>Days</span>
+            <span>Hours</span>
+            <span>Minutes</span>
+            <span>Seconds</span>
+          </div>
+          <div class="flex gap-1.5 mt-3.5">
+            <button type="button" tabindex="0" aria-label="Click to see more"
+              class="flex justify-center px-12 py-3.5 text-base leading-7 whitespace-nowrap bg-white rounded-[30px] text-slate-900">
+              selengkapnya
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <article class="flex-shrink-0 flex flex-col justify-center w-[300px] max-md:w-full overflow-hidden">
+      <div
+        class="flex overflow-hidden relative flex-col pt-20 pb-px w-full h-[420px] max-md:w-full items-start rounded-sm">
+        <img loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1b57099ab6e91066b0c1b4285c32de868d90d69f110697bff850c184049259a?apiKey=e18d0a0d50014be2861bdf8974ce47f5&"
+          alt="Manifest Image 1" class="object-cover absolute inset-0 w-full h-full rounded-[20px]" />
+        <div class="flex relative flex-col items-start py-11 pr-20 pl-9 mt-20 max-md:px-5 max-md:mt-10 max-md:w-full">
+          <h2 class="text-2xl text-black font-semibold">MANIFEST</h2>
+          <p class="mt-3.5 text-sm text-opacity-70  text-black">Deskripsi manifest bla bla</p>
+          <time class="mt-5  text-black text-base">59 : 14 : 36 : 24</time>
+          <div class="flex gap-5 justify-between mt-2.5 text-xs   text-black whitespace-nowrap">
+            <span>Days</span>
+            <span>Hours</span>
+            <span>Minutes</span>
+            <span>Seconds</span>
+          </div>
+          <div class="flex gap-1.5 mt-3.5">
+            <button type="button" tabindex="0" aria-label="Click to see more"
+              class="flex justify-center px-12 py-3.5 text-base leading-7 whitespace-nowrap bg-white rounded-[30px] text-slate-900">
+              selengkapnya
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <article class="flex-shrink-0 flex flex-col justify-center w-[300px] max-md:w-full overflow-hidden">
+      <div
+        class="flex overflow-hidden relative flex-col pt-20 pb-px w-full h-[420px] max-md:w-full items-start rounded-sm">
+        <img loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1b57099ab6e91066b0c1b4285c32de868d90d69f110697bff850c184049259a?apiKey=e18d0a0d50014be2861bdf8974ce47f5&"
+          alt="Manifest Image 1" class="object-cover absolute inset-0 w-full h-full rounded-[20px]" />
+        <div class="flex relative flex-col items-start py-11 pr-20 pl-9 mt-20 max-md:px-5 max-md:mt-10 max-md:w-full">
+          <h2 class="text-2xl text-black font-semibold">MANIFEST</h2>
+          <p class="mt-3.5 text-sm text-opacity-70  text-black">Deskripsi manifest bla bla</p>
+          <time class="mt-5  text-black text-base">59 : 14 : 36 : 24</time>
+          <div class="flex gap-5 justify-between mt-2.5 text-xs   text-black whitespace-nowrap">
+            <span>Days</span>
+            <span>Hours</span>
+            <span>Minutes</span>
+            <span>Seconds</span>
+          </div>
+          <div class="flex gap-1.5 mt-3.5">
+            <button type="button" tabindex="0" aria-label="Click to see more"
+              class="flex justify-center px-12 py-3.5 text-base leading-7 whitespace-nowrap bg-white rounded-[30px] text-slate-900">
+              selengkapnya
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <article class="flex-shrink-0 flex flex-col justify-center w-[300px] max-md:w-full overflow-hidden">
+      <div
+        class="flex overflow-hidden relative flex-col pt-20 pb-px w-full h-[420px] max-md:w-full items-start rounded-sm">
+        <img loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1b57099ab6e91066b0c1b4285c32de868d90d69f110697bff850c184049259a?apiKey=e18d0a0d50014be2861bdf8974ce47f5&"
+          alt="Manifest Image 1" class="object-cover absolute inset-0 w-full h-full rounded-[20px]" />
+        <div class="flex relative flex-col items-start py-11 pr-20 pl-9 mt-20 max-md:px-5 max-md:mt-10 max-md:w-full">
+          <h2 class="text-2xl text-black font-semibold">MANIFEST</h2>
+          <p class="mt-3.5 text-sm text-opacity-70  text-black">Deskripsi manifest bla bla</p>
+          <time class="mt-5  text-black text-base">59 : 14 : 36 : 24</time>
+          <div class="flex gap-5 justify-between mt-2.5 text-xs   text-black whitespace-nowrap">
+            <span>Days</span>
+            <span>Hours</span>
+            <span>Minutes</span>
+            <span>Seconds</span>
+          </div>
+          <div class="flex gap-1.5 mt-3.5">
+            <button type="button" tabindex="0" aria-label="Click to see more"
+              class="flex justify-center px-12 py-3.5 text-base leading-7 whitespace-nowrap bg-white rounded-[30px] text-slate-900">
+              selengkapnya
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <article class="flex-shrink-0 flex flex-col justify-center w-[300px] max-md:w-full overflow-hidden">
+      <div
+        class="flex overflow-hidden relative flex-col pt-20 pb-px w-full h-[420px] max-md:w-full items-start rounded-sm">
+        <img loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d1b57099ab6e91066b0c1b4285c32de868d90d69f110697bff850c184049259a?apiKey=e18d0a0d50014be2861bdf8974ce47f5&"
+          alt="Manifest Image 1" class="object-cover absolute inset-0 w-full h-full rounded-[20px]" />
+        <div class="flex relative flex-col items-start py-11 pr-20 pl-9 mt-20 max-md:px-5 max-md:mt-10 max-md:w-full">
+          <h2 class="text-2xl text-black font-semibold">MANIFEST</h2>
+          <p class="mt-3.5 text-sm text-opacity-70  text-black">Deskripsi manifest bla bla</p>
+          <time class="mt-5  text-black text-base">59 : 14 : 36 : 24</time>
+          <div class="flex gap-5 justify-between mt-2.5 text-xs   text-black whitespace-nowrap">
+            <span>Days</span>
+            <span>Hours</span>
+            <span>Minutes</span>
+            <span>Seconds</span>
+          </div>
+          <div class="flex gap-1.5 mt-3.5">
+            <button type="button" tabindex="0" aria-label="Click to see more"
+              class="flex justify-center px-12 py-3.5 text-base leading-7 whitespace-nowrap bg-white rounded-[30px] text-slate-900">
+              selengkapnya
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </article>
+    <!-- Repeat Article Template as needed -->
+  </section>
+
+  <div class="relative h-14 mt-20 mb-10 p-6 bg-gradient-to-r flex justify-between items-center">
+    <h5 class="mx-8 leading-tight text-black dark:text-neutral-50 text-3xl text-justify font-medium mb-6">
+      Acara yang akan berlangsung
+    </h5>
+
+    <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="click"
+      class="flex items-center justify-center mb-4 px-10 py-3.5 bg-blue-950 hover:bg-blue-900 rounded-[30px] max-md:px-5 text-white"
+      type="button">
+      <span class="mr-3">Jurusan</span>
+      <svg class="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+      </svg>
+    </button>
+
+    <!-- Dropdown menu -->
+    <div id="dropdownHover"
+      class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+      style="position: absolute;">
+      <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+        <li>
+          <a href="#"
+            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Informatika</a>
+        </li>
+        <li>
+          <a href="#"
+            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Statistika</a>
+        </li>
+        <li>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Elektro</a>
+        </li>
+        <li>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Matematika
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const dropdownButton = document.getElementById('dropdownHoverButton');
+        const dropdownMenu = document.getElementById('dropdownHover');
+
+        // Function to position the dropdown below the button
+        function positionDropdown() {
+          const rect = dropdownButton.getBoundingClientRect();
+          dropdownMenu.style.top = `${rect.bottom + window.scrollY}px`;
+          dropdownMenu.style.left = `${rect.left + window.scrollX}px`;
+        }
+
+        // Add event listener to show/hide dropdown when button is clicked
+        dropdownButton.addEventListener('click', function (event) {
+          event.stopPropagation(); // Prevent the click from propagating to the document
+          dropdownMenu.classList.toggle('hidden');
+          if (!dropdownMenu.classList.contains('hidden')) {
+            positionDropdown();
+          }
+        });
+
+        // Hide dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+          if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.add('hidden');
+          }
+        });
+
+        // Reposition the dropdown when the window is resized
+        window.addEventListener('resize', function () {
+          if (!dropdownMenu.classList.contains('hidden')) {
+            positionDropdown();
+          }
+        });
+      });
+    </script>
+  </div>
+
+  <section class="px-5 mx-20">
+    <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+      <section class="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
+        <div class="flex flex-col grow text-base leading-7 whitespace-nowrap text-slate-900 max-md:mt-10">
+          <img loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/3cf42040cd8c8b152e84d103f15a0ded649a404b53da10b739dc1edf25775efc?apiKey=e18d0a0d50014be2861bdf8974ce47f5&"
+            alt="Image description 1" class="w-full max-w-full h-auto aspect-[0.67]" />
+            <button type="button" tabindex="0"
+            class="justify-center self-center mt-4 px-8 py-3.5 bg-blue-950 hover:bg-blue-900 rounded-[30px] max-md:px-5 text-white"
+            onclick="window.location.href='{{route('/selengkapnya')}}'">
+            selengkapnya
+        </button>        
+        </div>
+      </section>
+      <section class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+        <div class="flex flex-col grow text-base leading-7 whitespace-nowrap text-slate-900 max-md:mt-10">
+          <img loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/1ae90ab7fb178c8f32b99654cfa29d1d46799f097273018aad6e7685392e455f?apiKey=e18d0a0d50014be2861bdf8974ce47f5&"
+            alt="Image description 2" class="w-full max-w-full h-auto aspect-[0.67]" />
+          <button type="button" tabindex="0"
+            class="justify-center self-center mt-4 px-8 py-3.5 bg-blue-950 hover:bg-blue-900 rounded-[30px] max-md:px-5 text-white"
+            onclick="window.location.href='{{route('/selengkapnya')}}'">
+            selengkapnya
+          </button>
+
+
+        </div>
+      </section>
+      <section class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+        <div class="flex flex-col grow text-base leading-7 whitespace-nowrap text-slate-900 max-md:mt-10">
+          <img loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/4676e01f17ccb8eddd26f90c902237251c091791dbf8ba33062904c3d3c6c114?apiKey=e18d0a0d50014be2861bdf8974ce47f5&"
+            alt="Image description 3" class="w-full max-w-full h-auto aspect-[0.67]" />
+          <button type="button" tabindex="0"
+            class="justify-center self-center mt-4 px-8 py-3.5 bg-blue-950 hover:bg-blue-900 rounded-[30px] max-md:px-5 text-white">
+            selengkapnya
+          </button>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section class="px-5 mx-20 mt-10 ">
+    <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+      <section class="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
+        <div class="flex flex-col grow text-base leading-7 whitespace-nowrap text-slate-900 max-md:mt-10">
+          <img loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/3cf42040cd8c8b152e84d103f15a0ded649a404b53da10b739dc1edf25775efc?apiKey=e18d0a0d50014be2861bdf8974ce47f5&"
+            alt="Image description 1" class="w-full max-w-full h-auto aspect-[0.67]" />
+          <button type="button" tabindex="0"
+            class="justify-center self-center mt-4 px-8 py-3.5 bg-blue-950 hover:bg-blue-900 rounded-[30px] max-md:px-5 text-white">
+            selengkapnya
+          </button>
+        </div>
+      </section>
+      <section class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+        <div class="flex flex-col grow text-base leading-7 whitespace-nowrap text-slate-900 max-md:mt-10">
+          <img loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/1ae90ab7fb178c8f32b99654cfa29d1d46799f097273018aad6e7685392e455f?apiKey=e18d0a0d50014be2861bdf8974ce47f5&"
+            alt="Image description 2" class="w-full max-w-full h-auto aspect-[0.67]" />
+          <button type="button" tabindex="0"
+            class="justify-center self-center mt-4 px-8 py-3.5 bg-blue-950 hover:bg-blue-900 rounded-[30px] max-md:px-5 text-white">
+            selengkapnya
+          </button>
+        </div>
+      </section>
+      <section class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+        <div class="flex flex-col grow text-base leading-7 whitespace-nowrap text-slate-900 max-md:mt-10">
+          <img loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/4676e01f17ccb8eddd26f90c902237251c091791dbf8ba33062904c3d3c6c114?apiKey=e18d0a0d50014be2861bdf8974ce47f5&"
+            alt="Image description 3" class="w-full max-w-full h-auto aspect-[0.67]" />
+          <button type="button" tabindex="0"
+            class="justify-center self-center mt-4 px-8 py-3.5 bg-blue-950 hover:bg-blue-900 rounded-[30px] max-md:px-5 text-white">
+            selengkapnya
+          </button>
+        </div>
+      </section>
+    </div>
+  </section>
 
 </div>
 
-@endslot
 
+
+<!-- Include the following script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const scrollSection = document.getElementById('scroll-section');
+    let scrollAmount = 0;
+    const scrollStep = 1; // Change this value to control the speed of the scroll
+    const scrollInterval = 20; // Change this value to control the frequency of the scroll
+
+    function autoScroll() {
+      scrollAmount += scrollStep;
+      if (scrollAmount >= scrollSection.scrollWidth - scrollSection.clientWidth) {
+        scrollAmount = 0;
+      }
+      scrollSection.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+
+    setInterval(autoScroll, scrollInterval);
+  });
+</script>
+
+@endslot
 @end
