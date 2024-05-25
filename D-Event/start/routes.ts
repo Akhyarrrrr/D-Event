@@ -38,9 +38,8 @@ router
     router.get('/acara', [PagesController, 'acara'])
     router.get('/bantuan', [PagesController, 'bantuan'])
     router.get('/selengkapnya', [PagesController, 'selengkapnya'])
-    router.get('/index', [PagesController, 'index'])
+    router.get('/index', [AdminController, 'index']).as('index')
+    router.get('/admin', [AdminController, 'index']).as('admin.index')
+    router.delete('/user/:id', [AdminController, 'destroy']).as('user.destroy')
   })
   .middleware([middleware.auth()]) // Middleware auth untuk rute umum
-
-// Rute admin
-router.get('/admin', [AdminController, 'index']).as('admin.index')

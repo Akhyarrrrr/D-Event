@@ -28,8 +28,4 @@ export default class PagesController {
   async selengkapnya({ view }: HttpContext) {
     return view.render('pages/selengkapnya')
   }
-
-  async index({ view }: HttpContext) {
-    return view.render('pages/admin/index')
-  }
 }
