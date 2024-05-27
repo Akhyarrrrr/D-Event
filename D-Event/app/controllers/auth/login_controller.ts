@@ -14,9 +14,9 @@ export default class LoginController {
     await auth.use('web').login(user)
 
     // Arahkan berdasarkan roleId
-    if (user.roleId === 2) {
+    if (user.role === 'Admin') {
       return response.redirect().toRoute('admin.index')
-    } else if (user.roleId === 1) {
+    } else if (user.role === 'User') {
       return response.redirect().toRoute('/')
     }
 

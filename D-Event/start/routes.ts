@@ -6,6 +6,7 @@ const LoginController = () => import('#controllers/auth/login_controller')
 const RegisterController = () => import('#controllers/auth/register_controller')
 const LogoutController = () => import('#controllers/auth/logout_controller')
 const AdminController = () => import('#controllers/admin_controller')
+const EventsController = () => import('#controllers/events_controller')
 
 router.get('/', async (ctx) => {
   await ctx.auth.check()
@@ -41,5 +42,7 @@ router
     router.get('/index', [AdminController, 'index']).as('index')
     router.get('/admin', [AdminController, 'index']).as('admin.index')
     router.delete('/user/:id', [AdminController, 'destroy']).as('user.destroy')
+    router.post('/events', [EventsController, 'store']).as('events.store')
+    router.get('/events', [EventsController, 'index']).as('events.index')
   })
-  .middleware([middleware.auth()]) // Middleware auth untuk rute umum
+  .middleware([middleware.auth()])

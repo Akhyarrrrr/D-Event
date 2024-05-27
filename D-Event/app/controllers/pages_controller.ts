@@ -17,14 +17,6 @@ export default class PagesController {
     return view.render('pages/blog')
   }
 
-  async login({ view }: HttpContext) {
-    return view.render('pages/login')
-  }
-
-  async register({ view }: HttpContext) {
-    return view.render('pages/register')
-  }
-
   async selengkapnya({ view }: HttpContext) {
     return view.render('pages/selengkapnya')
   }

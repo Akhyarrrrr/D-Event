@@ -16,7 +16,7 @@ export default class AdminController {
     if (admin) {
       await admin.delete()
       session.flash({ status: 'User deleted successfully' })
-      return response.redirect('/admin')
+      return response.redirect('/index')
     }
   }
 }
