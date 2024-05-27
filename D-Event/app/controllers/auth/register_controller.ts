@@ -13,6 +13,12 @@ export default class RegisterController {
 
     await auth.use('web').login(user)
 
+    if (user.role === 'Admin') {
+      return response.redirect().toRoute('admin.index')
+    } else if (user.role === 'User') {
+      return response.redirect().toRoute('/')
+    }
+
     return response.redirect().toPath('/')
   }
 }

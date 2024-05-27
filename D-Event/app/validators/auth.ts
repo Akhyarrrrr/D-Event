@@ -5,6 +5,7 @@ export const registerValidator = vine.compile(
     fullName: vine.string().maxLength(100),
     email: vine.string().email().normalizeEmail(),
     password: vine.string().minLength(8),
+    role: vine.enum(['Admin', 'User']),
   })
 )
 

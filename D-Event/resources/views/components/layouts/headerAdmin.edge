@@ -1,0 +1,38 @@
+<header>
+  <nav class="bg-blue-950 border-blue-200 px-6 py-4">
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+      <a href="{{ route('/') }}" class="flex items-center">
+        <img src="{{ asset('/resources/images/logo.png') }}" class="h-8" alt="D'Event Logo" />
+      </a>
+
+      @if (auth.user)
+      <div class="flex items-center order-2 space-x-4 text-white">
+        Hi <span class="font-bold ml-2">{{ auth.user.fullName }}</span>
+
+        {{-- Logout --}}
+        <form method="POST" action="{{ route('auth.logout') }}">
+          {{ csrfField() }}
+          <button type="submit"
+            class="bg-white text-blue-950 border hover:bg-blue-950 hover:text-white hover:border-white px-4 py-2 rounded-full font-semibold text-md ml-4">
+            Logout
+          </button>
+        </form>
+      </div>
+      @endif
+
+      {{-- Mobile Menu --}}
+      <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+        <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 text-lg">
+          <li>
+            <a href="{{ route('/admin') }}"
+              class="block border-0 hover:text-primary-700 p-0 text-white hover:text-gray-400 hover:bg-transparent border-gray-700">Data User</a>
+          </li>
+          <li>
+            <a href="{{ route('/events') }}"
+              class="block border-0 hover:text-primary-700 p-0 text-white hover:text-gray-400 hover:bg-transparent border-gray-700">Data Event</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
