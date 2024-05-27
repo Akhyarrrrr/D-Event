@@ -1,15 +1,17 @@
 @layouts.mainAdmin()
 
 @end()
-
 @slot('title')
-Admin Dashboard
+Admin - Events
 @endslot
 
 @slot('body')
-<div class="mb-6 mt-10">
-  <p class="text-xl">Selamat datang di dashboard Admin</p>
-  <p class="text-2xl">Berikut adalah data pengguna yang terdaftar: </p>
+<div class="mb-6">
+  <h1 class="text-3xl font-semibold mb-4 mt-16">
+    Daftar Event
+  </h1>
+
+  <p class="text-xl">Berikut adalah data event yang terdaftar:</p>
 </div>
 
 <div class="overflow-x-auto shadow-md sm:rounded-lg mx-16 mb-32">
@@ -17,40 +19,40 @@ Admin Dashboard
     <thead class="text-md uppercase bg-blue-950 text-white">
       <tr>
         <th scope="col" class="px-6 py-3 w-1/4 text-center">
-          ID
+          Nama Acara
         </th>
         <th scope="col" class="px-6 py-3 w-1/4 text-center">
-          Role
+          Email Organisasi
         </th>
         <th scope="col" class="px-6 py-3 w-1/4 text-center">
-          Nama
+          Jadwal
         </th>
         <th scope="col" class="px-6 py-3 w-1/4 text-center">
-          Email
+          Deskripsi
         </th>
-        <th scope="col" class="px-4 py-3 w-1/4 text-center">
+        {{-- <th scope="col" class="px-4 py-3 w-1/4 text-center">
           Action
-        </th>
+        </th> --}}
       </tr>
     </thead>
     <tbody>
-      @each(user in users)
+      @each(event in events)
       <tr class="bg-white border-b hover:bg-gray-50">
         <td class="px-6 py-4 border-r font-medium text-black whitespace-nowrap text-center">
-          {{ user.id }}
+          {{ event.name }}
         </td>
         <td class="px-6 py-4 border-r font-medium text-black whitespace-nowrap text-center">
-          {{ user.role }}
+          {{ event.email }}
         </td>
         <td class="px-6 py-4 border-r text-center">
-          {{ user.fullName || '-' }}
+          {{ event.event_date }}
         </td>
         <td class="px-6 py-4 border-r text-center">
-          {{ user.email }}
+          {{ event.description }}
         </td>
-       <td>
-        <form class="text-center" method="POST"
-            action="{{ route('user.destroy', {id: user.id}, { qs: { _method: 'DELETE' } }) }}">
+        {{-- <td>
+          <form class="text-center" method="POST"
+            action="{{ route('user.destroy', {id: event.id}, { qs: { _method: 'DELETE' } }) }}">
             {{csrfField()}}
             <button class="bg-red-500 hover:bg-red-700 text-white font-semibold py-1 px-6 mx-4 my-2 rounded">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" viewBox="0 0 20 20"
@@ -62,11 +64,12 @@ Admin Dashboard
               Delete
             </button>
           </form>
-       </td>
+        </td> --}}
       </tr>
       @endeach
     </tbody>
   </table>
 </div>
 @endslot
+
 @end

@@ -59,13 +59,17 @@
               {{$message.join(',')}}
               @end
 
-              {{-- Confirm Password
-              <input id="password" type="password" name="password" value="{{old('password') || '' }}"
-                class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                type="password" placeholder="Confirm Password" required />
-              @inputError('password')
-              {{$message.join(',')}}
-              @end --}}
+              {{-- Role --}}
+              <div class="">
+                <label for="role"></label>
+                <select id="role" name="role" value="{{old('role') || ''}}"
+                  class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                  required>
+                  <option selected >Select Role</option>
+                  <option>Admin</option>
+                  <option>User</option>
+                </select>
+              </div>
 
               {{-- Submit Button --}}
               <button type="submit"
