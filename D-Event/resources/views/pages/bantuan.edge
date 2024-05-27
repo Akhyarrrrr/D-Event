@@ -28,7 +28,8 @@ Bantuan Page
   </div>
 
   <div class="mx-40 mb-16">
-    <form>
+    <form action="/events" method="POST">
+      {{csrfField()}}
       <div class="mb-5 text-start">
         <label for="name" class="mb-3 block text-base font-medium text-blue-950">
           Nama Acara
@@ -44,20 +45,20 @@ Bantuan Page
         <input type="email" name="email" id="email" placeholder="Email Organisasi" required
           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-blue-950 focus:shadow-md shadow-lg" />
       </div>
-
+      {{--
       <div class="mb-5 text-start">
-        <label for="name" class="mb-3 block text-base font-medium text-blue-950">
+        <label for="registration_link" class="mb-3 block text-base font-medium text-blue-950">
           Link Pendaftaran
         </label>
-        <input type="text" name="name" id="name" placeholder="Link Pendaftaran" required
+        <input type="text" name="registration_link" id="registration_link" placeholder="Link Pendaftaran" required
           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-blue-950 focus:shadow-md shadow-lg" />
-      </div>
+      </div> --}}
 
       <div class="mb-5 text-start">
-        <label for="date" class="mb-3 block text-base font-medium text-blue-950">
+        <label for="event_date" class="mb-3 block text-base font-medium text-blue-950">
           Jadwal Kegiatan
         </label>
-        <input type="date" name="date" id="date" required
+        <input type="date" name="event_date" id="event_date" required
           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-blue-950 focus:shadow-md shadow-lg" />
       </div>
 
@@ -65,7 +66,7 @@ Bantuan Page
         <label for="message" class="mb-3 block text-base font-medium text-blue-950">
           Deskripsi Acara
         </label>
-        <textarea type="textarea" name="message" id="message" placeholder="Deskripsi Acara" required
+        <textarea type="textarea" name="description" id="description" placeholder="Deskripsi Acara" required
           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-blue-950 focus:shadow-md shadow-lg"
           rows="7"></textarea></>
       </div>

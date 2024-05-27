@@ -1,0 +1,75 @@
+@layouts.mainAdmin()
+
+@end()
+@slot('title')
+Admin - Events
+@endslot
+
+@slot('body')
+<div class="mb-6">
+  <h1 class="text-3xl font-semibold mb-4 mt-16">
+    Daftar Event
+  </h1>
+
+  <p class="text-xl">Berikut adalah data event yang terdaftar:</p>
+</div>
+
+<div class="overflow-x-auto shadow-md sm:rounded-lg mx-16 mb-32">
+  <table class="w-full text-sm text-left rtl:text-right text-black bg-[#E1F0DA]">
+    <thead class="text-md uppercase bg-blue-950 text-white">
+      <tr>
+        <th scope="col" class="px-6 py-3 w-1/4 text-center">
+          Nama Acara
+        </th>
+        <th scope="col" class="px-6 py-3 w-1/4 text-center">
+          Email Organisasi
+        </th>
+        <th scope="col" class="px-6 py-3 w-1/4 text-center">
+          Jadwal
+        </th>
+        <th scope="col" class="px-6 py-3 w-1/4 text-center">
+          Deskripsi
+        </th>
+        {{-- <th scope="col" class="px-4 py-3 w-1/4 text-center">
+          Action
+        </th> --}}
+      </tr>
+    </thead>
+    <tbody>
+      @each(event in events)
+      <tr class="bg-white border-b hover:bg-gray-50">
+        <td class="px-6 py-4 border-r font-medium text-black whitespace-nowrap text-center">
+          {{ event.name }}
+        </td>
+        <td class="px-6 py-4 border-r font-medium text-black whitespace-nowrap text-center">
+          {{ event.email }}
+        </td>
+        <td class="px-6 py-4 border-r text-center">
+          {{ event.event_date }}
+        </td>
+        <td class="px-6 py-4 border-r text-center">
+          {{ event.description }}
+        </td>
+        {{-- <td>
+          <form class="text-center" method="POST"
+            action="{{ route('user.destroy', {id: event.id}, { qs: { _method: 'DELETE' } }) }}">
+            {{csrfField()}}
+            <button class="bg-red-500 hover:bg-red-700 text-white font-semibold py-1 px-6 mx-4 my-2 rounded">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" viewBox="0 0 20 20"
+                fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M6 3a1 1 0 011-1h6a1 1 0 011 1v1h2a1 1 0 011 1v2a1 1 0 01-1 1h-1v8a1 1 0 01-1 1H8a1 1 0 01-1-1V8H6a1 1 0 01-1-1V4a1 1 0 011-1zm4 2H8v10h2V5zm3 0h-2v10h2V5z"
+                  clip-rule="evenodd" />
+              </svg>
+              Delete
+            </button>
+          </form>
+        </td> --}}
+      </tr>
+      @endeach
+    </tbody>
+  </table>
+</div>
+@endslot
+
+@end
