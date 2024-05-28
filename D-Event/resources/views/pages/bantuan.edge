@@ -7,7 +7,7 @@ Bantuan Page
 <div>
 
   <div class="relative overflow-hidden">
-    <img src="https://source.unsplash.com/400x300/?hanging-planters" alt="Hanging Planters" class="w-full h-96">
+    <img src="{{asset('/resources/images/bantuan.png')}}" alt="bantuan" class="w-full h-96">
     <p
       class="cursor-pointer absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-3xl text-center text-white font-medium group-hover:bg-opacity-60 transition px-52">
       Tingkatkan jangkauan dan eksposur acaramu! Isilah formulir ini sekarang untuk menyertakan agenda acaramu di
@@ -45,14 +45,6 @@ Bantuan Page
         <input type="email" name="email" id="email" placeholder="Email Organisasi" required
           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-blue-950 focus:shadow-md shadow-lg" />
       </div>
-      {{--
-      <div class="mb-5 text-start">
-        <label for="registration_link" class="mb-3 block text-base font-medium text-blue-950">
-          Link Pendaftaran
-        </label>
-        <input type="text" name="registration_link" id="registration_link" placeholder="Link Pendaftaran" required
-          class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-blue-950 focus:shadow-md shadow-lg" />
-      </div> --}}
 
       <div class="mb-5 text-start">
         <label for="event_date" class="mb-3 block text-base font-medium text-blue-950">
@@ -83,8 +75,24 @@ Bantuan Page
 
     </form>
   </div>
+
+  
 </div>
 
+<script>
+  document.getElementById('openModalButton').addEventListener('click', function () {
+    document.getElementById('modal').classList.remove('hidden');
+  });
+
+  document.getElementById('confirmButton').addEventListener('click', function () {
+    document.getElementById('modal').classList.add('hidden');
+    window.location.href = "{{ route('/acara') }}";
+  });
+
+  document.getElementById('cancelButton').addEventListener('click', function () {
+    document.getElementById('modal').classList.add('hidden');
+  });
+</script>
 @endslot
 
 @end
