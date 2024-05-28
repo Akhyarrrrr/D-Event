@@ -13,7 +13,7 @@ export default class EventsController {
     }
 
     await Event.create(data)
-    return response.redirect('/events')
+    return response.redirect('/bantuan')
   }
 
   async index({ view }: HttpContext) {
