@@ -1,0 +1,118 @@
+@layouts.main()
+@slot('title')
+Detail Acara
+@endslot
+
+@slot('body')
+<div class="flex justify-center items-center h-screen">
+  <div class="bg-gray-100 p-10 rounded-lg shadow-md" id="body-slot">
+    <!-- Konten akan diisi oleh JavaScript -->
+  </div>
+</div>
+@endslot
+@end
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Data JSON acara
+    const events = [
+      {
+        "image": "{{asset('/resources/images/infest.jpg')}}",
+        "name": "Infest",
+        "description": "Infest adalah acara terbesar dari HMIF",
+        "detail": "Acara ini akan diadakan di Gedung D3 FMIPA UI",
+        "date": "2024-05-29"
+      },
+      {
+        "image": "{{asset('/resources/images/manifest.jpeg')}}",
+        "name": "Manifest",
+        "description": "Manifest adalah acara terbesar dari HMMI",
+        "detail": "Acara ini akan diadakan di Gedung D3 FMIPA UI",
+        "date": "2024-06-10"
+      },
+      {
+        "image": "{{asset('/resources/images/pcoh.jpg')}}",
+        "name": "PCOH",
+        "description": "PCOH adalah acara terbesar dari HMIFAR",
+        "detail": "Acara ini akan diadakan di Gedung D3 FMIPA UI",
+        "date": "2024-06-23"
+      },
+      {
+        "image": "{{asset('/resources/images/upf.png')}}",
+        "name": "UPF",
+        "description": "UPF adalah acara terbesar dari HMIFAR",
+        "detail": "Acara ini akan diadakan di Gedung D3 FMIPA UI",
+        "date": "2024-07-05"
+      },
+      {
+        "image": "{{asset('/resources/images/mathfair.jpeg')}}",
+        "name": "Math Fair",
+        "description": "Math Fair adalah acara terbesar dari HIMATIKA",
+        "detail": "Acara ini akan diadakan di Gedung D3 FMIPA UI",
+        "date": "2024-08-15"
+      },
+      {
+        "image": "{{asset('/resources/images/biofair.png')}}",
+        "name": "Bio Fair",
+        "description": "UPF adalah acara terbesar dari HMB",
+        "detail": "Acara ini akan diadakan di Gedung D3 FMIPA UI",
+        "date": "2024-09-15"
+      },
+      {
+        "image": "{{asset('/resources/images/chemistry.jpg')}}",
+        "name": "Chemistry Fair",
+        "description": "ChemistryFair adalah acara terbesar dari HMK",
+        "detail": "Acara ini akan diadakan di Gedung D3 FMIPA UI",
+        "date": "2024-10-15"
+      },
+      {
+        "image": "{{asset('/resources/images/statexplore.jpeg')}}",
+        "name": "Stat Explore",
+        "description": "Stat Explore adalah acara terbesar dari HIMASTA",
+        "detail": "Acara ini akan diadakan di Gedung D3 FMIPA UI",
+        "date": "2024-11-15"
+      },
+      {
+        "image": "{{asset('/resources/images/pilmipa.jpg')}}",
+        "name": "PILMIPA",
+        "description": "PILMIPA adalah acara terbesar dari BEM FMIPA",
+        "detail": "Acara ini akan diadakan di Gedung D3 FMIPA UI",
+        "date": "2024-12-14"
+      },
+    ];
+
+    // Mendapatkan query parameter dari URL
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    // Menampilkan detail acara
+    function renderEventDetail(name) {
+      const event = events.find(event => event.name === name);
+
+      if (event) {
+        const { image, description, detail, date } = event;
+        const bodySlot = document.querySelector('#body-slot');
+
+        // Mengisi template dengan data acara
+        bodySlot.innerHTML = `
+          <h1 class="text-3xl font-semibold mb-4">${name}</h1>
+          <img src="${image}" class="w-64 h-64 mb-4" alt="Event Image">
+          <p class="text-lg text-gray-700 mb-4">${description}</p>
+          <p class="text-lg text-gray-700 mb-4">${detail}</p>
+          <p class="text-sm text-gray-500">Tanggal Acara: ${date}</p>
+          <div class="mt-6">
+            <a href="/acara" class="text-blue-600 hover:underline">Kembali ke Daftar Acara</a>
+          </div>
+        `;
+      } else {
+        console.error('Event not found');
+      }
+    }
+
+    // Mendapatkan nama acara dari query parameter
+    const eventName = getQueryParam('name');
+    renderEventDetail(eventName);
+  });
+</script>

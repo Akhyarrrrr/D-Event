@@ -1,0 +1,131 @@
+@layouts.main()
+@slot('title')
+Blog Page
+@endslot
+
+@slot('body')
+<div>
+
+  <div class="relative overflow-hidden">
+    <img src="{{ asset('/resources/images/history.png') }}" alt="history" class="w-full h-96 object-cover">
+
+    <p
+      class="cursor-pointer absolute inset-0 flex mt-36 justify-center text-5xl text-center text-white font-medium px-52">
+      History
+    </p>
+    <p
+      class="cursor-pointer absolute inset-0 flex justify-center text-center text-white font-medium px-52 mt-52 text-lg">
+      Hidupkan kembali momen-momen berharga dari acara-acara sebelumnya di blog kami
+    </p>
+  </div>
+
+  <div class="flex items-center justify-center mt-8">
+    <input type="text" id="search-input" placeholder="Cari acara..." class="border-2 border-gray-300 p-2">
+    <button id="search-button" class="ml-2 px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">Cari</button>
+    <select id="department-filter" class="ml-4">
+      <option value="">Semua Jurusan</option>
+      <option value="HMIF">HMIF</option>
+      <option value="HMMI">HMMI</option>
+      <!-- Tambahkan opsi untuk jurusan lainnya sesuai kebutuhan -->
+    </select>
+  </div>
+    {{-- Event Card --}}
+    <div class="grid grid-cols-3 font-medium text-white event-container">
+    </div>
+  </div>
+
+
+</div>
+@endslot
+@end
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Data JSON acara
+    const events = [
+      {
+        "image": "{{asset('/resources/images/infest.jpg')}}",
+        "name": "Infest",
+        "description": "Infest adalah acara terbesar dari HMIF",
+        "date": "2024-05-29",
+        "department": "HMIF" // Menambahkan data jurusan
+      },
+      {
+        "image": "{{asset('/resources/images/manifest.jpeg')}}",
+        "name": "Manifest",
+        "description": "Manifest adalah acara terbesar dari HMMI",
+        "date": "2024-06-10",
+        "department": "HMMI" // Menambahkan data jurusan
+      },
+      // Tambahkan data acara lainnya dengan field department yang sesuai
+    ];
+
+    const eventContainer = document.querySelector('.event-container');
+
+    function renderEvents(filteredEvents) {
+      eventContainer.innerHTML = ''; // Clear the container before rendering
+
+      filteredEvents.forEach((event, index) => {
+        const eventDate = new Date(event.date);
+        const today = new Date();
+        const timeDiff = eventDate - today;
+        const daysRemaining = Math.ceil(timeDiff / (1000 * 60 * 60 * 24)); // Convert to days
+
+        const eventCard = document.createElement('div');
+        eventCard.className = 'flex items-center rounded-lg bg-blue-950 m-8';
+
+        eventCard.innerHTML = `
+        <div class="">
+          <img src="${event.image}" class="object-fill rounded-t-lg h-60 w-96 hover:opacity-70" />
+          <div class="flex relative flex-col items-start text-white">
+            <h2 class="text-2xl font-semibold pt-6 ml-4">${event.name}</h2>
+            <p class="text-sm ml-4 pt-2">${event.description}</p>
+            <p class="text-sm ml-4 pt-2">${event.date}</p>
+            <p class="text-xs ml-4 py-6">
+              <a href="#" class="see-more-btn" data-index="${index}">Click to see more > </a>
+            </p>
+          </div>
+        </div>
+        `;
+
+        eventContainer.appendChild(eventCard);
+      });
+    }
+
+    // Initial render
+    renderEvents(events);
+
+    // Search functionality
+    const searchInput = document.getElementById('search-input');
+    const searchButton = document.getElementById('search-button');
+    const departmentFilter = document.getElementById('department-filter');
+
+    searchButton.addEventListener('click', function (e) {
+      e.preventDefault();
+      const searchTerm = searchInput.value.toLowerCase();
+      const selectedDepartment = departmentFilter.value; // Ambil nilai jurusan yang dipilih
+
+      const filteredEvents = events.filter(event =>
+        (event.name.toLowerCase().includes(searchTerm) ||
+        event.description.toLowerCase().includes(searchTerm)) &&
+        (!selectedDepartment || event.department === selectedDepartment) // Filter berdasarkan jurusan
+      );
+
+      renderEvents(filteredEvents);
+    });
+
+    // Function to handle click on "Click to see more" button
+    function handleSeeMoreClick(event) {
+      event.preventDefault();
+      const index = parseInt(event.target.dataset.index); // Get the index of the clicked event
+      const selectedEvent = events[index]; // Get the selected event data
+      // Redirect to the detail page with the selected event data
+      window.location.href = /selengkapnya?name=${selectedEvent.name}&description=${selectedEvent.description}&date=${selectedEvent.date};
+    }
+
+    // Add event listener to all "Click to see more" buttons
+    const seeMoreButtons = document.querySelectorAll('.see-more-btn');
+    seeMoreButtons.forEach(button => {
+      button.addEventListener('click', handleSeeMoreClick);
+    });
+  });
+</script>
