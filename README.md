@@ -3,7 +3,7 @@
 <p align="center"> 
   <img src="https://img.shields.io/badge/AdonisJS-^v6.9.0-green" alt="AdonisJS">
   <img src="https://img.shields.io/badge/npm-v9.8.1-red" alt="npm">
-  <img src="https://img.shields.io/badge/node-vv21.6.2-blue" alt="node">
+  <img src="https://img.shields.io/badge/node-v21.6.2-blue" alt="node">
 </p>
 <br>
 
