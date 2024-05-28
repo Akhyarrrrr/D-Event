@@ -8,7 +8,6 @@ export default class Events extends BaseSchema {
       table.increments('id')
       table.string('name').notNullable()
       table.string('email', 254).notNullable().unique()
-      table.string('registration_link').notNullable()
       table.dateTime('event_date').notNullable()
       table.text('description').notNullable()
       table.timestamp('created_at', { useTz: true }).defaultTo(this.now())
