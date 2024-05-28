@@ -13,6 +13,10 @@ router.get('/', async (ctx) => {
   return ctx.view.render('pages/beranda')
 })
 
+router.get('/acara', [PagesController, 'acara'])
+router.get('/selengkapnya', [PagesController, 'selengkapnya'])
+router.get('/blog', [PagesController, 'blog'])
+
 router
   .group(() => {
     router
@@ -35,10 +39,7 @@ router
 // Rute umum yang memerlukan autentikasi
 router
   .group(() => {
-    router.get('/blog', [PagesController, 'blog'])
-    router.get('/acara', [PagesController, 'acara'])
     router.get('/bantuan', [PagesController, 'bantuan'])
-    router.get('/selengkapnya', [PagesController, 'selengkapnya'])
     router.get('/index', [AdminController, 'index']).as('index')
     router.get('/admin', [AdminController, 'index']).as('admin.index')
     router.delete('/user/:id', [AdminController, 'destroy']).as('user.destroy')
